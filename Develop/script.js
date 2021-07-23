@@ -140,5 +140,4 @@ $(".saveBtn").on("click", function(event) {
     let saveIndex = $(this).siblings(".description").children(".text").attr("id");
     currentDay[saveIndex].reminder = $(this).siblings(".description").children(".text").val();
     saveReminders();
-    displayReminders();
 })
