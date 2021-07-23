@@ -113,11 +113,11 @@ currentDay.forEach(function(thisHour) {
     hourInput.append(planInput);
     planInput.attr("id", thisHour.id);
     if (thisHour.time < moment().format("HH")) {
-        planInput.addClass("past") ;
+        planInput.addClass("past text") ;
     } else if (thisHour.time === moment().format("HH")) {
-        planInput.addClass("present");
+        planInput.addClass("present text");
     } else if (thisHour.time > moment().format("HH")) {
-        planInput.addClass("future")
+        planInput.addClass("future text")
     }
     
     // creates save button
@@ -137,8 +137,8 @@ getJumboDate();
 // saves data to be used in localStorage
 $(".saveBtn").on("click", function(event) {
     event.preventDefault();
-    let saveIndex = $(this).siblings(".description").children(".future").attr("id");
-    currentDay[saveIndex].reminder = $(this).siblings(".description").children(".future").val();
+    let saveIndex = $(this).siblings(".description").children(".text").attr("id");
+    currentDay[saveIndex].reminder = $(this).siblings(".description").children(".text").val();
     saveReminders();
     displayReminders();
 })
