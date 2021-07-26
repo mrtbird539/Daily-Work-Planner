@@ -1,4 +1,4 @@
-
+//object for tracking and display the time blocks
 let currentDay = [
     {
         id: "0",
